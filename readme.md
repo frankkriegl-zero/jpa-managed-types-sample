@@ -1,11 +1,12 @@
-# Experiment with Jpa Managed Types
+# Setting JPA Managed Types via HibernatePropertiesCustomizer
 
-... in a Spring Boot Application
+as suggested in [this StackOverflow answer](https://stackoverflow.com/a/79542185/10263724).
 
-### !!! This project is just for demonstration purpose - do not use this example in production code !!!
-
+## Overview
 This project demonstrates an idea how to replace the `@EntityScan` annotation with manual configuration to include only specific entity classes. The goal is to avoid scanning the entire package and instead include only the necessary entity classes.
-Although it seems to work, it is likely not a good idea to implement it like this.
+
+Spring Boot 3.4.4
+--> [Hibernate 6.6.x as Spring Boot managed dependency](https://docs.spring.io/spring-boot/appendix/dependency-versions/coordinates.html)
 
 
 ## Motivation
@@ -22,7 +23,7 @@ The sample project implements a different approach to manually specify the entit
 This is done to ensure that only the required entity classes are included.
 
 The `Book` entity is located in a 'remote' package/domain to avoid auto-discovery. By that, the scenario of shared/remote entities is constructed in this example.
-The `Book` entity needs to be explicitly added to the entity scan or respectively as managed type in an entityManagerFactory bean (configuration class [`JpaConfig`](./src/main/java/org/example/bookstore/config/JpaConfig.java)).
+The `Book` entity needs to be explicitly added as managed type. This is done through a [HibernatePropertiesCustomizer](https://docs.spring.io/spring-boot/api/java/org/springframework/boot/autoconfigure/orm/jpa/HibernatePropertiesCustomizer.html) bean in configuration class [`JpaConfig`](./src/main/java/org/example/bookstore/config/JpaConfig.java).
 
 
 ## Running the Application
