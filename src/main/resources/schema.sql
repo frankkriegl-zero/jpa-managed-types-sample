@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS customer
     CONSTRAINT pk_customer PRIMARY KEY (id)
 );
 
-# INSERT INTO book (title, author, publication_year) VALUES ('The Great Gatsby', 'F. Scott Fitzgerald', 1925);
 # INSERT INTO book (title, author, publication_year) VALUES ('1984', 'George Orwell', 1949);
+# INSERT INTO book (title, author, publication_year) VALUES ('The Great Gatsby', 'F. Scott Fitzgerald', 1925);
 # INSERT INTO book (title, author, publication_year) VALUES ('Pride and Prejudice', 'Jane Austen', 1813);
 # INSERT INTO book (title, author, publication_year) VALUES ('The Catcher in the Rye', 'J.D. Salinger', 1951);
 # INSERT INTO book (title, author, publication_year) VALUES ('The Hobbit', 'J.R.R. Tolkien', 1937);

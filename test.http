@@ -1,5 +1,16 @@
 ###
 # @no-log
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "1984",
+  "author": "George Orwell",
+  "publicationYear": 1949
+}
+
+###
+# @no-log
 GET http://localhost:8080/books?year=1949
 
 ###
